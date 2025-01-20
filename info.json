@@ -6,6 +6,8 @@
     "factorio_version": "2.0",
     "title": "Favorite Chocolate Bars",
     "version": "1.0.0",
-    "homepage": "https://github.com/timsonde/Favorite Chocolate Bars",
-    "dependencies": []
+    "homepage": "https://github.com/timsonde/favorite-chocolate-bars",
+    "dependencies": [
+        "base >= 2.0.28"
+    ]
 }
