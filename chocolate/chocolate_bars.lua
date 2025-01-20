@@ -13,3 +13,13 @@ function chocolate.load_chocolate_bar(index)
     utils.info("Loading task: " .. serpent.block(chocolate_bar))
     return chocolate_bar
 end
+
+function initialize_mod()
+    if not storage then
+        storage.chocolate = { ["saved"] = {} }
+    else
+        for _, task in ipairs(storage.chocolate.saved) do
+            -- TODO: Ensure valid data
+        end
+    end
+end
