@@ -36,3 +36,41 @@ end
 function utils.show_log(player)
     return settings.get_player_settings(player)["favorite-chocolate-bars-show-log"].value
 end
+
+function utils.create_frame(player, name, caption, close_name)
+    local frame = player.gui.screen.add({
+        type = "frame",
+        name = name,
+        direction = "vertical"
+    })
+
+    local title_bar = frame.add({
+        type = "flow"
+    })
+
+    local title = title_bar.add({
+        type = "label",
+        caption = caption,
+        style = "frame_title"
+    })
+    title.drag_target = frame
+
+    local dragger = title_bar.add({
+        type = "empty-widget",
+        style = "draggable_space_header"
+    })
+    dragger.style.vertically_stretchable = true
+    dragger.style.horizontally_stretchable = true
+    dragger.drag_target = frame
+
+    if close_name ~= nil then
+        title_bar.add({
+            type = "sprite-button",
+            style = "frame_action_button",
+            sprite = "utility/close",
+            name = close_name
+        })
+    end
+
+    return frame
+end
